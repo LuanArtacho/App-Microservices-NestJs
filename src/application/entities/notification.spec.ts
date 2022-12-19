@@ -2,11 +2,12 @@ import { Content } from './content';
 import { Notification } from './notification';
 
 describe('Notification', () => {
-  it('It should be able to create a notification', () => {
+  it('should be able to create a notification', () => {
     const notification = new Notification({
-      content: new Content('Nova solicitação de amizade'),
-      category: 'social',
       recipientId: 'example-recipient-id',
+      content: new Content('You have a notification'),
+      category: 'social',
+      readAt: new Date(),
     });
 
     expect(notification).toBeTruthy();

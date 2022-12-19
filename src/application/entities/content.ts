@@ -5,15 +5,15 @@ export class Content {
     return this.content;
   }
 
-  private validateContentLenght(content: string): boolean {
-    return content.length >= 5 && content.length <= 240;
+  private validationContentLength(content: string): boolean {
+    return content.length > 5 && content.length <= 240;
   }
 
   constructor(content: string) {
-    const isContentLenghtValid = this.validateContentLenght(content);
+    const isContentLengthValid = this.validationContentLength(content);
 
-    if (!isContentLenghtValid) {
-      throw new Error('Content lenght error.');
+    if (!isContentLengthValid) {
+      throw new Error('Content length error.');
     }
 
     this.content = content;
